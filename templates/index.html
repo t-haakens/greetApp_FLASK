@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<!-- This is a multi-line comment in html
+    <br> = line break
+    <p> = paragraph
+    percentSymbols inside curlyBraces- communicate with Python file
+
+
+-->
+<html>
+    <head>
+        <!-- This is how to comment in html -->
+        <!-- Selecting character encoding  -->
+        <meta charset="UTF-8">
+        <title>Say Hello</title>
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+        <body>
+            <img src="https://raw.githubusercontent.com/MariyaSha/SimpleGreetingApp/main/logo.png">
+            <br> <!-- line break here  -->
+
+    <!-- action stores our input data, 
+    post-method since sending data to server, rather than fetching  -->
+            <form action="greet" method="post">
+                {% for message in get_flashed_messages()%}
+                    <p> {{message}} </p>
+                {% endfor %}
+                <br>
+                <input type="text" name="name_input">
+                <br>
+                <!-- Obs: cannot use regular <button> inside forms -->
+                <input type="submit" value="Greet" id="greet">
+            </form>
+        </body>
+
+        
+</html>
