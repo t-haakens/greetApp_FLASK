@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, flash
 # creates a class for our app
 app = Flask(__name__)
 
-app.secret_key = "manbearpig_123"
+app.secret_key = "someKeyHere"
 
 # specify last part of url
 @app.route("/hello")
